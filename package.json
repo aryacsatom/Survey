@@ -1,0 +1,26 @@
+{
+  "name": "web_server",
+  "version": "1.0.0",
+  "description": "Udemy project for learning web server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "author": "AKA",
+  "license": "ISC",
+  "dependencies": {
+    "all": "0.0.0",
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.5.6",
+    "mongoose": "^5.9.10",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "nodemon": "^2.0.4",
+    "validator": "^13.0.0"
+  },
+  "devDependencies": {}
+}
