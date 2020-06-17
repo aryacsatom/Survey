@@ -215,7 +215,7 @@ exports.changeMarriageStatus=(req,res)=>{//both
         }else{
             let m=user.marital;
             user.marital=req.params.status;
-            if(m==='married'){
+            if(m==='married'&& req.params.status==='married'){//*****change
                 res.json({error:false,message:`User already married`,user:user})
             }
             else if(req.params.status===`married`&& m==='unmarried'){
@@ -236,6 +236,13 @@ exports.changeMarriageStatus=(req,res)=>{//both
                     .catch(err=>res.json({error:true,message:`Error while updating the marital status of the user to married`,errMessage:err}));
                 })
                 .catch(err=>res.json({error:true,message:`Error while creating the nuclear family of the user`,errMessage:err}))
+            }else if(req.params.status===`unmarried`&& m==='unmarried'){//*******change
+                user.save()
+                .then(updatedUser=>{
+                    res.json({error:false,message:`User already unmarried`,user:updatedUser})
+                })
+                .catch(err=>res.json({error:true,message:`Error while updating the marital status of the user to unmarried`,errMessage:err}));
+
             }else{
                 user.save()
                 .then(updatedUser=>{
